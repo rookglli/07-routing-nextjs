@@ -31,19 +31,19 @@ export default function NotesClient({ tag }: NotesClientProps) {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-const { data, isLoading, isError, isFetching } = useQuery({
-  queryKey: ['notes', page, search, tag],
+  const { data, isLoading, isError, isFetching } = useQuery({
+    queryKey: ['notes', page, search, tag],
 
-  queryFn: () =>
-    fetchNotes({
-      page,
-      perPage: 12,
-      search,
-      tag,
-    }),
+    queryFn: () =>
+      fetchNotes({
+        page,
+        perPage: 12,
+        search,
+        tag,
+      }),
 
-  placeholderData: keepPreviousData,
-});
+    placeholderData: keepPreviousData,
+  });
 
   const debouncedSearch = useDebouncedCallback((value: string) => {
     setSearch(value);

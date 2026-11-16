@@ -16,9 +16,7 @@ interface NotePreviewClientProps {
   id: string;
 }
 
-export default function NotePreviewClient({
-  id,
-}: NotePreviewClientProps) {
+export default function NotePreviewClient({ id }: NotePreviewClientProps) {
   const router = useRouter();
 
   const handleClose = useCallback(() => {
